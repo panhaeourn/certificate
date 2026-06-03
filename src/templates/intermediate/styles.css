@@ -1,0 +1,87 @@
+.certificate--intermediate {
+  container-type: inline-size;
+  position: relative;
+  width: min(100%, 1120px);
+  aspect-ratio: 800 / 567;
+  margin: 2px auto 0;
+  overflow: hidden;
+  background: url("/design/certificate-bg-intermediate.png") center / cover no-repeat #fff;
+  box-shadow: var(--shadow-lg);
+  page-break-after: always;
+}
+
+.certificate--intermediate .fill {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111827;
+  font-family:
+    var(--certificate-font-name),
+    "Times New Roman", "Noto Serif Khmer", "Khmer OS Battambang", serif;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.certificate--intermediate .fill-intermediate-khmer {
+  left: 29.625%;
+  top: 35.45%;
+  width: 16.25%;
+  min-height: 6.7%;
+  font-family:
+    var(--certificate-font-khmer),
+    "Noto Serif Khmer", "Khmer OS Battambang", "Times New Roman", serif;
+  font-size: clamp(11px, 1.5cqw, 18px);
+  font-weight: 400;
+}
+
+.certificate--intermediate .fill-intermediate-english {
+  left: 57.375%;
+  top: 35.45%;
+  width: 21.75%;
+  min-height: 5.64%;
+  font-family:
+    var(--certificate-font-english),
+    "Times New Roman", "Noto Serif Khmer", "Khmer OS Battambang", serif;
+  font-size: clamp(11px, 1.5cqw, 18px);
+  font-weight: 400;
+}
+
+.exporting .certificate--intermediate {
+  width: 297mm;
+  height: 210mm;
+  max-width: none;
+  aspect-ratio: auto;
+  box-shadow: none;
+}
+
+.exporting .certificate--intermediate .fill-intermediate-khmer,
+.exporting .certificate--intermediate .fill-intermediate-english {
+  font-size: 14px;
+}
+
+@media (max-width: 980px) {
+  .certificate--intermediate {
+    min-width: 820px;
+  }
+}
+
+@media print {
+  .certificate--intermediate {
+    width: 297mm;
+    height: 210mm;
+    max-width: none;
+    aspect-ratio: auto;
+    box-shadow: none;
+    margin: 0;
+    break-after: page;
+  }
+
+  .certificate--intermediate .fill-intermediate-khmer,
+  .certificate--intermediate .fill-intermediate-english {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,286 @@
+.certificate--jianhua {
+  container-type: inline-size;
+  position: relative;
+  width: min(100%, 1200px);
+  aspect-ratio: 1.414 / 1;
+  margin: 2px auto 0;
+  overflow: hidden;
+  background: url("/design/certificate-bg-clean.png") center / cover no-repeat var(--paper);
+  box-shadow: var(--shadow-lg);
+  page-break-after: always;
+}
+
+.certificate--jianhua .fill {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.8%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0f172a;
+  font-family:
+    "Times New Roman", "Noto Serif Khmer", "Khmer OS Battambang", SimSun, serif;
+  font-size: clamp(12px, 1.86cqw, 21px);
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.certificate--jianhua .static-label,
+.certificate--jianhua .input-line {
+  position: absolute;
+  z-index: 1;
+  color: #111827;
+  font-family:
+    var(--certificate-font-labels),
+    "Times New Roman", "Noto Serif Khmer", "Khmer OS Battambang", SimSun, serif;
+  font-size: clamp(14px, 2.05cqw, 24px);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.certificate--jianhua .input-line {
+  height: 1px;
+  border-bottom: 2px dotted #111827;
+}
+
+.certificate--jianhua .label-student {
+  left: 10.4%;
+  top: 44.9%;
+}
+
+.certificate--jianhua .label-gender {
+  left: 33.5%;
+  top: 44.9%;
+}
+
+.certificate--jianhua .label-birth-year {
+  left: 22%;
+  top: 50.2%;
+}
+
+.certificate--jianhua .label-birth-month {
+  left: 33%;
+  top: 50.2%;
+}
+
+.certificate--jianhua .label-birth-day {
+  left: 39.2%;
+  top: 50.2%;
+}
+
+.certificate--jianhua .label-study-at {
+  left: 10.8%;
+  top: 56%;
+}
+
+.certificate--jianhua .label-study-year {
+  left: 16.4%;
+  top: 56%;
+}
+
+.certificate--jianhua .label-study-month {
+  left: 25%;
+  top: 56%;
+}
+
+.certificate--jianhua .label-final {
+  left: 23.6%;
+  top: 72%;
+}
+
+.certificate--jianhua .line-name {
+  left: 14.5%;
+  top: 46.1%;
+  width: 18.2%;
+}
+
+.certificate--jianhua .line-gender {
+  left: 37.6%;
+  top: 46.1%;
+  width: 7.2%;
+}
+
+.certificate--jianhua .line-birth-year {
+  left: 14.2%;
+  top: 51.4%;
+  width: 7.1%;
+}
+
+.certificate--jianhua .line-birth-month {
+  left: 25.6%;
+  top: 51.4%;
+  width: 6.8%;
+}
+
+.certificate--jianhua .line-birth-day {
+  left: 34.5%;
+  top: 51.4%;
+  width: 4.3%;
+}
+
+.certificate--jianhua .fill-name {
+  left: 17.7%;
+  top: 44.5%;
+  width: 16.7%;
+  font-family:
+    var(--certificate-font-name),
+    "Times New Roman", "Noto Serif Khmer", "Khmer OS Battambang", SimSun, serif;
+}
+
+.certificate--jianhua .fill-gender {
+  left: 39.1%;
+  top: 44.5%;
+  width: 5.4%;
+  font-family:
+    var(--certificate-font-gender),
+    "Times New Roman", "Noto Serif Khmer", "Khmer OS Battambang", SimSun, serif;
+}
+
+.certificate--jianhua .fill-birth-year {
+  left: 16.2%;
+  top: 49.9%;
+  width: 6.2%;
+  font-family:
+    var(--certificate-font-birth-date),
+    "Times New Roman", "Noto Serif Khmer", "Khmer OS Battambang", SimSun, serif;
+}
+
+.certificate--jianhua .fill-birth-month {
+  left: 29.2%;
+  top: 49.9%;
+  width: 4.6%;
+  font-family:
+    var(--certificate-font-birth-date),
+    "Times New Roman", "Noto Serif Khmer", "Khmer OS Battambang", SimSun, serif;
+}
+
+.certificate--jianhua .fill-birth-day {
+  left: 39.9%;
+  top: 49.9%;
+  width: 4.5%;
+  font-family:
+    var(--certificate-font-birth-date),
+    "Times New Roman", "Noto Serif Khmer", "Khmer OS Battambang", SimSun, serif;
+}
+
+.certificate--jianhua .fill-study-year {
+  left: 7.9%;
+  top: 56%;
+  width: 5.3%;
+  font-family:
+    var(--certificate-font-study-date),
+    "Times New Roman", "Noto Serif Khmer", "Khmer OS Battambang", SimSun, serif;
+}
+
+.certificate--jianhua .fill-study-month {
+  left: 18.5%;
+  top: 56%;
+  width: 4.2%;
+  font-family:
+    var(--certificate-font-study-date),
+    "Times New Roman", "Noto Serif Khmer", "Khmer OS Battambang", SimSun, serif;
+}
+
+.certificate--jianhua .fill-issue-day {
+  left: 76.9%;
+  top: 68.1%;
+  width: 4.6%;
+  font-family:
+    var(--certificate-font-issue-date),
+    "Times New Roman", "Noto Serif Khmer", "Khmer OS Battambang", SimSun, serif;
+}
+
+.certificate--jianhua .fill-issue-month {
+  left: 85.5%;
+  top: 68.1%;
+  width: 4%;
+  font-family:
+    var(--certificate-font-issue-date),
+    "Times New Roman", "Noto Serif Khmer", "Khmer OS Battambang", SimSun, serif;
+}
+
+.certificate--jianhua .fill-issue-year {
+  left: 91.4%;
+  top: 68.1%;
+  width: 5.4%;
+  font-family:
+    var(--certificate-font-issue-date),
+    "Times New Roman", "Noto Serif Khmer", "Khmer OS Battambang", SimSun, serif;
+}
+
+.certificate--jianhua .fill-photo {
+  position: absolute;
+  z-index: 3;
+  left: 46.25%;
+  top: 67.4%;
+  width: 10.1%;
+  height: 19.05%;
+  object-fit: cover;
+  border: 2px solid #061a62;
+  background: #fff;
+}
+
+.exporting .certificate--jianhua {
+  width: 297mm;
+  height: 210mm;
+  max-width: none;
+  aspect-ratio: auto;
+  box-shadow: none;
+}
+
+.exporting .certificate--jianhua .fill {
+  font-size: 20px;
+}
+
+.exporting .certificate--jianhua .static-label {
+  font-size: 22px;
+}
+
+.exporting .certificate--jianhua .fill-photo {
+  left: 137.36mm;
+  top: 141.54mm;
+  width: 30mm;
+  height: 40mm;
+}
+
+@media (max-width: 980px) {
+  .certificate--jianhua {
+    min-width: 820px;
+  }
+}
+
+@media print {
+  .certificate--jianhua {
+    width: 297mm;
+    height: 210mm;
+    max-width: none;
+    aspect-ratio: auto;
+    box-shadow: none;
+    margin: 0;
+    break-after: page;
+  }
+
+  .certificate--jianhua .fill {
+    font-size: 20px;
+  }
+
+  .certificate--jianhua .static-label {
+    font-size: 22px;
+  }
+
+  .certificate--jianhua .fill-photo {
+    left: 137.36mm;
+    top: 141.54mm;
+    width: 30mm;
+    height: 40mm;
+  }
+
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+}
