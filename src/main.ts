@@ -195,13 +195,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           </div>
         </div>
         <div id="error-message" class="error-message" hidden></div>
-        <div id="empty-state" class="empty-state">
-          <span>${renderIcon(Sparkles)}</span>
-          <div>
-            <h2>Ready for upload</h2>
-            <p>Upload the spreadsheet first; attached or filename-matched photos will appear automatically.</p>
-          </div>
-        </div>
         <div id="certificate-list" class="certificate-list"></div>
       </section>
     </section>
@@ -223,7 +216,6 @@ const fontStatus = document.querySelector<HTMLParagraphElement>('#font-status')!
 const sheetCard = document.querySelector<HTMLLabelElement>('#sheet-card')!
 const imageCard = document.querySelector<HTMLLabelElement>('#image-card')!
 const list = document.querySelector<HTMLDivElement>('#certificate-list')!
-const emptyState = document.querySelector<HTMLDivElement>('#empty-state')!
 const errorBox = document.querySelector<HTMLDivElement>('#error-message')!
 const sheetFile = document.querySelector<HTMLSpanElement>('#sheet-file')!
 const imageFile = document.querySelector<HTMLSpanElement>('#image-file')!
@@ -341,7 +333,6 @@ function render() {
   imageCard.classList.toggle('is-complete', externalImageFileCount + embeddedObjectUrls.length > 0)
   printButton.disabled = rows.length === 0
   savePdfButton.disabled = rows.length === 0
-  emptyState.hidden = rows.length > 0
 
   const visibleRows = rows.length > 0 ? rows : [{}]
   list.innerHTML = visibleRows
