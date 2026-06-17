@@ -226,7 +226,6 @@ h1 {
 }
 
 .section-heading h2,
-.preview-bar h2,
 .field-list h2 {
   margin-top: 4px;
   font-size: 18px;
@@ -635,74 +634,12 @@ code {
 
 .preview-area {
   display: grid;
-  grid-template-rows: auto auto auto 1fr;
+  grid-template-rows: auto 1fr;
   align-content: start;
   gap: 16px;
   min-width: 0;
   padding: 24px 30px 36px;
   overflow: auto;
-}
-
-.preview-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 15px 17px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-  backdrop-filter: blur(10px);
-}
-
-.preview-meta {
-  display: flex;
-  flex: 0 0 auto;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px;
-}
-
-.preview-meta > span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 30px;
-  padding: 0 11px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.74);
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 720;
-  white-space: nowrap;
-}
-
-.status-pill {
-  display: inline-flex;
-  flex: 0 0 auto;
-  align-items: center;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 760;
-}
-
-.status-pill.is-waiting {
-  border-color: rgba(161, 92, 7, 0.18);
-  background: #fff8eb;
-  color: var(--warning);
-}
-
-.status-pill.is-ready {
-  border-color: rgba(22, 116, 73, 0.2);
-  background: #edf9f3;
-  color: var(--success);
-}
-
-.status-pill.is-error {
-  border-color: rgba(180, 35, 24, 0.2);
-  background: #fff4f2;
-  color: var(--danger);
 }
 
 .error-message {
@@ -820,9 +757,6 @@ code {
     padding: 18px;
   }
 
-  .preview-meta {
-    justify-content: flex-start;
-  }
 }
 
 @media (max-width: 560px) {
@@ -845,7 +779,6 @@ code {
 
   .actions,
   .stats,
-  .preview-bar,
   .upload-card,
   .level-card,
   .font-card,
@@ -874,7 +807,6 @@ code {
 
   .topbar,
   .panel,
-  .preview-bar,
   .empty-state,
   .error-message {
     display: none !important;

@@ -9,7 +9,6 @@ import {
   LayoutTemplate,
   LoaderCircle,
   Printer,
-  Sparkles,
   Type,
   Upload,
 } from 'lucide'
@@ -70,7 +69,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         <div>
           <p class="eyebrow">Certificate Studio</p>
           <h1>Batch certificate printer</h1>
-          <p class="subtitle">Excel data, student photos, A4 landscape output.</p>
+          <p class="subtitle">Excel data and student photos.</p>
         </div>
       </div>
       <div class="actions">
@@ -183,17 +182,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       </aside>
 
       <section class="preview-area">
-        <div class="preview-bar">
-          <div>
-            <p class="eyebrow">Preview</p>
-            <h2>Certificate output</h2>
-          </div>
-          <div class="preview-meta">
-            <span>A4 landscape</span>
-            <span>3x4 photo</span>
-            <span id="preview-status" class="status-pill">Waiting for Excel</span>
-          </div>
-        </div>
         <div id="error-message" class="error-message" hidden></div>
         <div id="certificate-list" class="certificate-list"></div>
       </section>
@@ -219,7 +207,6 @@ const list = document.querySelector<HTMLDivElement>('#certificate-list')!
 const errorBox = document.querySelector<HTMLDivElement>('#error-message')!
 const sheetFile = document.querySelector<HTMLSpanElement>('#sheet-file')!
 const imageFile = document.querySelector<HTMLSpanElement>('#image-file')!
-const previewStatus = document.querySelector<HTMLSpanElement>('#preview-status')!
 const rowCount = document.querySelector<HTMLSpanElement>('#row-count')!
 const imageCount = document.querySelector<HTMLSpanElement>('#image-count')!
 
@@ -319,14 +306,6 @@ function render() {
   list.style.setProperty('--certificate-font-labels', certificateFontStack(selectedFieldFonts.labels))
   list.style.setProperty('--certificate-font-khmer', certificateFontStack(selectedFieldFonts.khmer))
   list.style.setProperty('--certificate-font-english', certificateFontStack(selectedFieldFonts.english))
-  previewStatus.textContent = rows.length === 0
-    ? 'Waiting for Excel'
-    : `${rows.length} certificate${rows.length === 1 ? '' : 's'} ready`
-  previewStatus.className = errorMessage
-    ? 'status-pill is-error'
-    : rows.length > 0
-      ? 'status-pill is-ready'
-      : 'status-pill is-waiting'
   errorBox.textContent = errorMessage
   errorBox.hidden = errorMessage === ''
   sheetCard.classList.toggle('is-complete', rows.length > 0)
