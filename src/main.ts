@@ -10,7 +10,6 @@ import {
   LoaderCircle,
   Printer,
   Type,
-  Upload,
 } from 'lucide'
 import * as XLSX from 'xlsx'
 import { customFonts, fontOptionsHtml, installCustomFonts } from './fonts/fontRegistry'
@@ -139,21 +138,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           </div>
         </section>
 
-        <section class="workflow-card" aria-label="Workflow">
-          <div class="workflow-item">
-            <span>${renderIcon(Upload)}</span>
-            <p>Upload Excel</p>
-          </div>
-          <div class="workflow-item">
-            <span>${renderIcon(Images)}</span>
-            <p>Match photos</p>
-          </div>
-          <div class="workflow-item">
-            <span>${renderIcon(Printer)}</span>
-            <p>Export PDF</p>
-          </div>
-        </section>
-
         <div class="stats">
           <div>
             <span id="row-count">0</span>
@@ -174,11 +158,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           </div>
         </div>
 
-        <div class="field-list">
-          <h2>Excel column names</h2>
-          <p>The picture column accepts a filename, URL, or WPS inserted cell image.</p>
-          <div id="column-help-list">${columnHelpHtml(activeTemplate())}</div>
-        </div>
       </aside>
 
       <section class="preview-area">
@@ -197,7 +176,6 @@ const templateButton = document.querySelector<HTMLButtonElement>('#download-temp
 const levelSelect = document.querySelector<HTMLSelectElement>('#level-select')!
 const activeTemplateName = document.querySelector<HTMLHeadingElement>('#active-template-name')!
 const activeTemplateDescription = document.querySelector<HTMLParagraphElement>('#active-template-description')!
-const columnHelpList = document.querySelector<HTMLDivElement>('#column-help-list')!
 const selectedFontFieldLabel = document.querySelector<HTMLSpanElement>('#selected-font-field-label')!
 const selectedFontSelect = document.querySelector<HTMLSelectElement>('#selected-font-select')!
 const fontStatus = document.querySelector<HTMLParagraphElement>('#font-status')!
@@ -293,7 +271,6 @@ function render() {
   levelSelect.value = selectedCertificateLevel
   activeTemplateName.textContent = activeTemplate().name
   activeTemplateDescription.textContent = activeTemplate().description
-  columnHelpList.innerHTML = columnHelpHtml(activeTemplate())
   renderSelectedFontFieldState()
   fontStatus.textContent = customFonts.length === 0
     ? 'Paste font files into src/fonts, then refresh.'
@@ -366,10 +343,6 @@ function downloadTemplate() {
 
 function activeTemplate() {
   return certificateTemplates[selectedCertificateLevel as keyof typeof certificateTemplates]
-}
-
-function columnHelpHtml(template: ReturnType<typeof activeTemplate>) {
-  return template.columnHelp.map((column) => `<code>${escapeHtml(column)}</code>`).join('')
 }
 
 function certificateFontStack(fontFamily: string) {
